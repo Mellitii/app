@@ -8,7 +8,7 @@ genai.configure(api_key=os.environ["GENAI_API_KEY"])
 
 # Create the model configuration
 generation_config = {
-    "temperature": 1,
+    "temperature": 0,
     "top_p": 0.95,
     "top_k": 64,
     "max_output_tokens": 8192,
@@ -16,7 +16,7 @@ generation_config = {
 }
 
 # Create the Streamlit interface
-st.title('Mon application Python')
+st.title('Mon app speech to text medical')
 st.write('Veuillez télécharger un fichier audio pour le convertir en texte.')
 
 # Allow the user to upload an audio file
