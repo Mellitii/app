@@ -1,10 +1,15 @@
 import os
 import google.generativeai as genai
+from dotenv import load_dotenv
 import streamlit as st
 
-# Set the API key
-os.environ["GENAI_API_KEY"] = "AIzaSyAIOIZrkRR8dOQppiItPYl_txlx6VEr8PE"
-genai.configure(api_key=os.environ["GENAI_API_KEY"])
+load_dotenv()
+
+# Récupérer la clé API depuis les variables d'environnement
+api_key = os.getenv("GENAI_API_KEY")
+
+# Configurer le modèle avec l'API Key
+genai.configure(api_key=api_key)
 
 # Create the model configuration
 generation_config = {
